@@ -22,17 +22,19 @@ The project is developed as part of the Supervised Machine Learning course assig
 - Image format: TIFF
   Dataset files are obtained through the Kaggle competition page.
 
-Due to file size restrictions, the dataset is not included in this repository. 4. Repository Structure
-document-image-classification/
-├── README.md
-├── .gitignore
-├── requirements.txt
-├── data/
-├── notebooks/
-├── scripts/
-├── checkpoints/
-├── submissions/
-└── reports/
+Due to file size restrictions, the dataset is not included in this repository.
+
+4. Repository Structure
+   document-image-classification/
+   ├── README.md
+   ├── .gitignore
+   ├── requirements.txt
+   ├── data/
+   ├── notebooks/
+   ├── scripts/
+   ├── checkpoints/
+   ├── submissions/
+   └── reports/
 
 5. Installation
    pip install -r requirements.txt
