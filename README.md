@@ -91,6 +91,15 @@ Project dapat dijalankan langsung melalui Kaggle Notebook tanpa perlu mengunduh 
 3. Siapkan modul Python dari folder scripts/ yang tersedia di repository GitHub ini. Modul dapat ditambahkan ke Kaggle melalui salah satu cara berikut:
    - Clone repository GitHub, jika akses internet pada notebook tersedia.
 
+     Jalankan perintah berikut agar direktori kerja berada di dalam folder repository:
+
+     ```python
+     !git clone https://github.com/sharlizm/document-image-classification.git
+     %cd /kaggle/working/document-image-classification
+     ```
+
+     Dengan demikian, notebook dapat menemukan folder `scripts/` secara langsung tanpa perlu mengunggahnya sebagai Kaggle Dataset.
+
    - Upload folder scripts/ sebagai Kaggle Dataset, kemudian tambahkan melalui Add Input. Folder juga dapat dikompresi menjadi ZIP terlebih dahulu untuk memudahkan upload.
 
 4. Upload notebook yang ingin dijalankan, yaitu `01_eda.ipynb`, `02_modeling.ipynb`, atau `03_submission.ipynb`.
@@ -253,10 +262,13 @@ Setelah model terbaik ditentukan, dilakukan pengujian **multi-scale inference** 
 
 Kombinasi akhirnya adalah:
 
-```text
-P_final = 0.80 × P_224 + 0.20 × P_256
-prediksi = argmax(P_final)
-```
+$$
+P_{\text{final}} = 0.80 \times P_{224} + 0.20 \times P_{256}
+$$
+
+$$
+\hat{y} = \operatorname{argmax}(P_{\text{final}})
+$$
 
 Bobot TTA dibandingkan pada validation set. Hasilnya:
 
