@@ -22,3 +22,8 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local outputs and credentials
+outputs/
+.env
+kaggle.json
