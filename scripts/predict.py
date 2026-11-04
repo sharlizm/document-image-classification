@@ -1,4 +1,4 @@
-"""Validation inference, classification metrics and learning curves."""
+"""Data test prediction and Kaggle submission file creation."""
 
 from pathlib import Path
 import pandas as pd

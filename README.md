@@ -11,7 +11,7 @@ Pengerjaan disusun mengikuti alur : **data understanding -> preprocessing -> spl
 | Validation accuracy dengan TTA 80:20 |                           **85,64%** |
 | Macro F1-score dengan TTA            |                            **0,855** |
 
-> Angka di atas adalah hasil eksperimen yang telah dijalankan, bukan jaminan hasil training ulang.
+> Angka di atas adalah hasil eksperimen yang telah dijalankan, belum tentu sama jika trainin dilakukan ulang.
 
 ## 1. Struktur Repository
 
@@ -86,15 +86,18 @@ Terdapat 16 kategori: `advertisement`, `budget`, `email`, `file_folder`, `form`,
 
 Project dapat dijalankan langsung melalui Kaggle Notebook tanpa perlu mengunduh dataset berukuran besar ke komputer lokal.
 
-1. Buka halaman kompetisi Kaggle dan setujui aturan akses dataset jika diminta.
+1. Buka halaman [Kaggle_Competition](https://www.kaggle.com/competitions/document-image-classification-sd234504/leaderboard) dan setujui aturan akses dataset jika diminta.
 2. Buat atau buka notebook, lalu gunakan Add Input untuk melampirkan dataset kompetisi.
-3. Siapkan modul Python dari folder `scripts/` pada repository ini. Jika menggunakan VS Code di Windows, buka terminal pada direktori utama project, kemudian jalankan:
+3. Siapkan modul Python dari folder scripts/ yang tersedia di repository GitHub ini. Modul dapat ditambahkan ke Kaggle melalui salah satu cara berikut:
+   - Clone repository GitHub, jika akses internet pada notebook tersedia.
 
-   ```powershell
-   Compress-Archive -Path scripts -DestinationPath scripts.zip -Force
-   ```
+   - Upload folder scripts/ sebagai Kaggle Dataset, kemudian tambahkan melalui Add Input. Folder juga dapat dikompresi menjadi ZIP terlebih dahulu untuk memudahkan upload.
 
-Perintah tersebut akan menghasilkan `scripts.zip` yang berisi modul untuk preprocessing, training, evaluasi, dan prediksi. 4. Upload `scripts.zip` sebagai Kaggle Dataset melalui **Create New Dataset**, kemudian tambahkan dataset tersebut ke notebook menggunakan **Add Input**. 5. Upload notebook yang ingin dijalankan, yaitu `01_eda.ipynb`, `02_modeling.ipynb`, atau `03_submission.ipynb`. 6. Pada notebook modeling, aktifkan GPU melalui **Settings -> Accelerator**. Untuk notebook EDA, CPU sudah cukup. 7. Jalankan seluruh cell notebook secara berurutan. Notebook akan memuat dataset dan mengimpor fungsi dari folder `scripts/`.
+4. Upload notebook yang ingin dijalankan, yaitu `01_eda.ipynb`, `02_modeling.ipynb`, atau `03_submission.ipynb`.
+5. Pada notebook modeling, aktifkan GPU melalui **Settings -> Accelerator**. Untuk notebook EDA, CPU sudah cukup.
+6. Jalankan cell notebook secara berurutan sesuai tahap analisis
+
+**Catatan**: Struktur folder scripts/ harus tetap dipertahankan agar modul dapat diimpor dengan benar. Notebook mendukung pencarian folder tersebut dari direktori repository maupun Kaggle Input. Nama Kaggle Dataset yang digunakan untuk menyimpan scripts tidak harus sama.
 
 **Urutan penggunaan notebook:**
 
